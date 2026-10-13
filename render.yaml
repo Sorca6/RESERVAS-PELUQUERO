@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: estudio-luma
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TIME_ZONE
+        value: Europe/Madrid
+      - key: DATABASE_URL
+        fromDatabase:
+          name: estudio-luma-db
+          property: connectionString
+      - key: ADMIN_PASSWORD
+        sync: false
+
+databases:
+  - name: estudio-luma-db
+    databaseName: estudio_luma
+    user: estudio_luma
+    plan: free
+    region: frankfurt

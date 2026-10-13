@@ -1,0 +1,15 @@
+{
+  "name": "estudio-luma-booking",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web de peluquería con reservas y agenda privada",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}
